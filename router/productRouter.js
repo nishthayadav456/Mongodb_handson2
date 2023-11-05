@@ -1,0 +1,11 @@
+const{addproductInStore,updatepriceOfSingleProduct, data2,data3,data4,data5,data6,data7}=require("../controller/productContoller")
+const route=require("express").Router()
+route.post("/addproductInStore",addproductInStore)
+route.put("/updateSingleproductprice",updatepriceOfSingleProduct)
+route.get("/data2",data2)
+route.get("/data3",data3)
+route.get("/data4",data4)
+route.get("/data5",data5)
+route.get("/data6",data6)
+route.get("/data7",data7)
+module.exports=route;
