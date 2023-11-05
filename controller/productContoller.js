@@ -147,14 +147,9 @@ const addproductInStore=async(req,res)=>{
     "yearGrad": "2019",
     "gradStream": "EEE"
 }])
+res.send({msg:"added successfully",data:data})
+ }
 
-    res.send({msg:"added successfully",data:data})
-    // res.send("added product")
-}
-const updatepriceOfSingleProduct=(req,res)=>{
-    res.send("updated successfully")
-
-}
 const data2 = async (req, res) => {
     const data1=req.body;
     try {
@@ -162,8 +157,7 @@ const data2 = async (req, res) => {
         res.send({msg:"Data retrieved successfully", data:data});
         console.log(data)
     } catch (error) {
-        console.error("Error while fetching data:", error);
-        res.status(5000).send("An error occurred while fetching data from the database.");
+     res.send("An error occurred while fetching data from the database.",error);
     }
 };
 const data3 = async (req, res) => {
@@ -173,8 +167,7 @@ const data3 = async (req, res) => {
         res.send({msg:"salary retrieved successfully", data:data});
         console.log(data)
     } catch (error) {
-        console.error("Error while fetching data:", error);
-        res.status(5000).send("An error occurred while fetching data from the database.");
+      res.send("An error occurred while fetching data from the database.",error);
     }
 };
 const data4 = async (req, res) => {
@@ -184,8 +177,7 @@ const data4 = async (req, res) => {
         res.send({msg:"overall exprience above 2 years successfully", data:data});
         console.log(data)
     } catch (error) {
-        console.error("Error while fetching data:", error);
-        res.status(5000).send("An error occurred while fetching data from the database.");
+       res.send("An error occurred while fetching data from the database.",error);
     }
 };
 const data5 = async (req, res) => {
@@ -195,8 +187,7 @@ const data5 = async (req, res) => {
         res.send({msg:"who are graduated after 2015 and having exprience more than 1year comes successfully", data:data});
         console.log(data)
     } catch (error) {
-        console.error("Error while fetching data:", error);
-        res.status(5000).send("An error occurred while fetching data from the database.");
+       res.send("An error occurred while fetching data from the database.",error);
     }
 };
 const data6 = async (req, res) => {
@@ -206,8 +197,7 @@ const data6 = async (req, res) => {
         res.send({msg:"salary is greater than 70000 to 65000 comes successfully", data:data});
         console.log(data)
     } catch (error) {
-        console.error("Error while fetching data:", error);
-        res.status(5000).send("An error occurred while fetching data from the database.");
+        res.send("An error occurred while fetching data from the database.",error);
     }
 };
 const data7 = async (req, res) => {
@@ -217,9 +207,8 @@ const data7 = async (req, res) => {
         res.send({msg:"Delete all the documents from employee where last company is Y", data:data});
         console.log(data)
     } catch (error) {
-        console.error("Error while fetching data:", error);
-        res.status(5000).send("An error occurred while fetching data from the database.");
+      res.send("An error occurred while fetching data from the database.",error);
     }
 };
 
-module.exports={addproductInStore,updatepriceOfSingleProduct,data2,data3,data4,data5,data6,data7}
+module.exports={addproductInStore,data2,data3,data4,data5,data6,data7}
